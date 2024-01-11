@@ -15,7 +15,9 @@ app.get("/", (req, res) => {
 
 //middlewares
 app.use("/api/bill", bill_routes);
-
+app.use("/hello", (req, res) => {
+  res.send("Hello");
+});
 const suruwat = async () => {
   try {
     await connectDB(process.env.MONGODB_URI);
